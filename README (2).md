@@ -62,8 +62,7 @@
            sudo apt install -y containerd.io
            sudo mkdir -p /etc/containerd
 
-           
-           
+#  
            containerd config default | sudo tee /etc/containerd/config.toml
 
 - Start containerd
