@@ -1,3 +1,9 @@
+
+
+
+![kubernetes-1 26](https://user-images.githubusercontent.com/120181043/209433967-00b5546a-d9a2-4ecf-a827-9c2dc81c4778.png)
+# Kubernetes 1.26 - The electrifying release setup
+
 ## Now that we know some of the cool features, let's set up a Kubernetes cluster on Ubuntu 20.04 machines for version 1.26.
 
 - Prerequisites
@@ -5,7 +11,7 @@
   2 Ubuntu 20.04 instances with ssh access to them, you can use any cloud provider to launch these instances
 
   Each instance should have a minimum of 4GB of ram
-# Step 1 - Run this on all the machines
+## Step 1 - Run this on all the machines
 - Kubeadm | kubectl | kubelet install
           
           curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
@@ -56,6 +62,8 @@
            sudo apt install -y containerd.io
            sudo mkdir -p /etc/containerd
 
+           
+           
            containerd config default | sudo tee /etc/containerd/config.toml
 
 - Start containerd
@@ -66,7 +74,7 @@
 
            sudo kubeadm config images pull --image-repository=registry.k8s.io --cri-socket unix:///run/containerd/containerd.sock --kubernetes-version v1.26.0
 
-# Step2 - Run the kubeadm init command on the control plane node
+## Step2 - Run the kubeadm init command on the control plane node
 
 - The new release images will now be under registry.k8s.io - This will provide faster downloads and also removes a single point of failure
 
@@ -85,9 +93,17 @@
 - This is command to generate a token :
 
             kubeadm token create --print-join-command
-
+## Step 3 - Run the join command on all the worker nodes
 - Then you can join any number of worker nodes by running the following on each node as root(copy from master):Then you can join any number of worker nodes by running the following on each node as root(copy from master):
   
       kubeadm join 74.220.27.73:6443 --token 3y24ca.kq73lohh99nzmcl5 \
       --discovery-token-ca-cert-hash sha256:f22dadb9c02bd9ac69b1819cbeaa11330ee70bb5fb6343f8b8a288b9ea83b00f \
       --control-plane --certificate-key 74bfd9237ded9661ca3ee337057caba0be417c19b6493034ec0da3dbcffc8fff
+
+- references - 
+
+  https://kubernetes.io/blog/2022/12/09/kubernetes-v1-26-release/
+
+  https://blog.kubesimplify.com/kubernetes-126
+  
+  https://github.com/containerd/containerd/blob/main/docs/getting-started.md
