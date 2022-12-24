@@ -99,6 +99,9 @@
       kubeadm join 74.220.27.73:6443 --token 3y24ca.kq73lohh99nzmcl5 \
       --discovery-token-ca-cert-hash sha256:f22dadb9c02bd9ac69b1819cbeaa11330ee70bb5fb6343f8b8a288b9ea83b00f \
       --control-plane --certificate-key 74bfd9237ded9661ca3ee337057caba0be417c19b6493034ec0da3dbcffc8fff
+ 
+ ![Screenshot (118)](https://user-images.githubusercontent.com/120181043/209434695-75258ab9-742a-44fb-adb9-81c5de716b66.png)
+
 
 - references - 
 
