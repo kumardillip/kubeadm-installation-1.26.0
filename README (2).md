@@ -12,6 +12,9 @@
 
   Each instance should have a minimum of 4GB of ram
 ## Step 1 - Run this on all the machines
+- Switch to an interactive session as a root user is the following:
+          
+          sudo su
 - Kubeadm | kubectl | kubelet install
           
           curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
