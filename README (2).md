@@ -90,7 +90,7 @@
 
 - deploy a pod network to the cluster on master node
 
-      kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml 
+      kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml  
 
 - This is command to generate a token :
 
